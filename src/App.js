@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import ToDoList from './components/ToDoList';
 import SubmitForm from './components/SubmitForm';
+import { Layout } from './components/Layout';
 
 class App extends React.Component {
   state = {
@@ -22,13 +23,13 @@ class App extends React.Component {
 
   render() {
     return(
-       <div className='wrapper'>
+       <Layout >
         <div className='card frame'>
           <Header numTodos={this.state.tasks.length}/>
           <ToDoList tasks={this.state.tasks} onDelete={this.handleDelete} />
           <SubmitForm onFormSubmit={this.handleSubmit} />
         </div>
-      </div>
+      </Layout>
     );
   }
 }
