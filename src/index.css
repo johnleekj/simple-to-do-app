@@ -24,3 +24,13 @@ form {
   max-height: 200px;
   overflow-y: auto;
 }
+.list-item {
+  border: solid;
+}
+.delete-is-pulled-right{
+  border: dashed;
+  display: inline-flex;
+  float: right;
+  margin-right: 10px;
+  height: 20px;
+}

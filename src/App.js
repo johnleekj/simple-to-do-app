@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import Header from './components/Header';
-import ToDoList from './components/ToDoList'
+import ToDoList from './components/ToDoList';
+import SubmitForm from './components/SubmitForm';
 
 class App extends React.Component {
   state = {
@@ -9,10 +9,15 @@ class App extends React.Component {
   };
 
   handleDelete = (index) => {
-    console.log('testing')
+    console.log('deleting')
     const newArr = [...this.state.tasks];
     newArr.splice(index, 1);
     this.setState({tasks: newArr});
+  }
+
+  handleSubmit = (task) => {
+    console.log('submitting');
+    this.setState( {tasks: [...this.state.tasks, task]} );
   }
 
   render() {
@@ -21,7 +26,7 @@ class App extends React.Component {
         <div className='card frame'>
           <Header numTodos={this.state.tasks.length}/>
           <ToDoList tasks={this.state.tasks} onDelete={this.handleDelete} />
-          {/* <Footer /> */}
+          <SubmitForm onFormSubmit={this.handleSubmit} />
         </div>
       </div>
     );
