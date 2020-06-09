@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
 
 const ToDoList = (props) => {
     const todos = props.tasks.map ((todo, index) => {
@@ -15,8 +16,8 @@ const ToDoList = (props) => {
 const Todo = (props) => {
     return(
       <div className='list-item'>
-        {props.content}
-        <button className="delete-is-pulled-right" onClick={() => {props.onDelete(props.id)}}>X</button>
+        <p>{props.content}</p>
+        <Button variant="light" className="delete-is-pulled-right" onClick={() => {props.onDelete(props.id)}}>X</Button>
       </div>
     );
   }

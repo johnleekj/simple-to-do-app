@@ -1,0 +1,8 @@
+.list-item {
+  display: flex;
+}
+.delete-is-pulled-right {
+  margin-left: auto;
+  margin-right: 0em;
+  min-width: 2em;
+}
